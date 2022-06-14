@@ -1,12 +1,14 @@
 const express = require("express");
 const morgan = require("morgan");
-const dotenv  = require("dotenv");
-const profileRouter  = require("./routes/profile");
+const cors = require("cors");
+const dotenv = require("dotenv");
+const profileRouter = require("./routes/profile");
 
 
 dotenv.config({ path: "./.env" });
 
 const app = express();
+app.use(cors());
 
 // Dev logging
 if (process.env.NODE_ENV === "development") {
