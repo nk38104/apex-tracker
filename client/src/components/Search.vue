@@ -30,6 +30,9 @@ export default {
             platform: "psn",
             gamertage: ""
         }
+    },
+    beforeCreate() {
+        document.body.className = "body-bg-image"
     }
 }
 </script>
