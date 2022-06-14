@@ -28,11 +28,24 @@ export default {
     data() {
         return {
             platform: "psn",
-            gamertage: ""
+            gamertag: ""
         }
     },
     beforeCreate() {
         document.body.className = "body-bg-image"
+    },
+    methods: {
+        onSubmit() {
+            if(!this.gamertag) {
+                this.$toast.show("Please enter a gamertag", {
+                    type: "warning",
+                    position: "top-right",
+                    duration: 2500
+                    });
+            } else {
+                this.$router.push(`/profile/${this.platform}/${this.gamertag}`);
+            }
+        }
     }
 }
 </script>
